@@ -1,0 +1,15 @@
+.example-element-row {
+    cursor: pointer;
+  }
+  
+  .example-expanded-row {
+    background: lightgray;
+  }
+  
+  .example-detail-row {
+    background: aliceblue;
+  }
+  
+  .mat-spinner {
+    margin-left: 10px;
+  }
