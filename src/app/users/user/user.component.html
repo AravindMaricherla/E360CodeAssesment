@@ -14,7 +14,7 @@
       }
     </div>
 
-    <div class="flex-auto p-4 sm:p-4">
+    <div class="flex-auto p-4 sm:p-4 card-padding">
       @if(userData?.length>0) {
       <div class="bg-card mat-elevation-z8  flex flex-col flex-auto justify">
 
@@ -52,9 +52,6 @@
             <th mat-header-cell *matHeaderCellDef>Birth Date</th>
             <td mat-cell *matCellDef="let element"> {{element?.birthDate | date: 'YYYY-MM-dd'}} </td>
           </ng-container>
-
-
-
 
           <!-- Expanded Content Column - The detail row is made up of this one column -->
           <ng-container matColumnDef="expandedDetail">
@@ -95,7 +92,6 @@
                       }
                     </mat-form-field>
 
-
                     <mat-form-field fxFlex="33" class="pl-4" appearance="outline">
                       <mat-label>Gender</mat-label>
                       <mat-select [formControlName]="'gender'" placeholder="Gender">
@@ -118,7 +114,6 @@
                       <mat-error>Enter Valid Email Address </mat-error>
                       }
                     </mat-form-field>
-
 
                     <mat-form-field fxFlex="33" class="pl-4" appearance="outline">
                       <mat-label>Phone</mat-label>
@@ -147,13 +142,11 @@
                             <mat-icon><mat-spinner diameter="20"></mat-spinner></mat-icon>
                           </ng-container>
                         }
-
                       </button>
 
                       <button color="warn" class="ml-10 cancleButton" mat-raised-button matStepperPrevious type="button"
                         (click)="closeExpendedDiv(element)">
                         <b>Cancel</b>
-
                       </button>
                     </div>
                   </form>
