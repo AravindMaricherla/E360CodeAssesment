@@ -132,7 +132,6 @@ export class UserComponent implements OnInit {
 
   getUserList() {
     this.postService.getUserList().pipe(takeUntil(this._unsubscribeAll)).subscribe(res => {
-      console.log("helloooo", res);
       this.userData = res.users;
       this.userData.forEach((element: any) => {
         element.show = false
@@ -145,7 +144,6 @@ export class UserComponent implements OnInit {
 
   toggleRow(value: any) {
     const foundElement = this.userData.find((elem: any) => elem !== undefined && elem.id === value.id)
-    console.log("The found element is " + JSON.stringify(foundElement));
     const index = this.userData.indexOf(foundElement);
 
     this.userData.forEach((element: any, mainindex: any) => {
