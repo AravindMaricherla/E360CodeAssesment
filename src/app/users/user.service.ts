@@ -1,24 +1,19 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Injectable, inject } from '@angular/core';
 import { User } from './user.model';
+import { environment } from '../../environments/environment';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://dummyjson.com/users';
+  // private apiUrl = 'https://dummyjson.com/users';
+  private http = inject(HttpClient)
+  constructor() {}
 
-  constructor(private http: HttpClient) {}
-
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl).pipe(
-        tap(_ => console.log('HTTP request to fetch users:', this.apiUrl))
-      );
+  getUserList(): Observable<User> {
+    return this.http.get<User>(environment.api);
   }
 
-  getUser(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
-  }
 }

@@ -17,6 +17,7 @@ export interface Address {
   }
   
   export interface User {
+    users: any;
     id: number;
     name: string;
     username: string;
